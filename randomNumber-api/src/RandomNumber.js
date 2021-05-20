@@ -39,7 +39,7 @@ class RandomNumber extends Component {
   getLottoNumbers(endingNumber, numbersToSupply) {
     axios
       .get(
-        "http://cors-anywhere.herokuapp.com/http://www.randomnumberapi.com/api/v1.0/random?min=1&max=" +
+          "http://cors-anywhere.herokuapp.com/http://www.randomnumberapi.com/api/v1.0/random?min=1&max=" +
           endingNumber +
           "&count=" +
           numbersToSupply
@@ -60,7 +60,9 @@ class RandomNumber extends Component {
 
     return (
       <div style={layout.all}>
-        <hr />
+        <br/>
+        <p style={{color: "red"}}>In order for this demo to work, you will need to enable your browser to use CORS - visit http://cors-anywhere.herokuapp.com/ and click on button to give temporary access</p>
+
         <section className="section">
           <h1 style={layout.form}>Lotto/Powerball number generator</h1>
           <hr></hr>
@@ -95,19 +97,19 @@ class RandomNumber extends Component {
             </div>
             <div style={layout.formGroup}>
               <button style={layout.button} className="button is-info ">
-                Get my Lotto numbers!
+                Get my numbers!
               </button>
             </div>
           </form>
         </section>
 
-        {this.state.isLoading && (
-          <ReactLoading
-            style={number.display}
-            type="spinningBubbles"
-            color="#444"
-          />
-        )}
+        {/*{this.state.isLoading && (*/}
+        {/*  <ReactLoading*/}
+        {/*    style={number.display}*/}
+        {/*    type="spinningBubbles"*/}
+        {/*    color="#444"*/}
+        {/*  />*/}
+        {/*)}*/}
         <div style={number.display}>
           <div>↓</div>
           {numbersChosen}
